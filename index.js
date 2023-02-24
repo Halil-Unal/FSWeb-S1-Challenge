@@ -190,13 +190,13 @@ Aşağıdakileri yapmak için profilListesi'ni kullanın:
 */
 
 function profilListesi(newArray) {
-  newArray= [... fenomenler];
+  const kopya = [...newArray]
   for(let i=0; i<newArray.length;i++){
     console.log(newArray[i].profile);
      
     
   }
-  return newArray
+  return newArray;
 }
 profilListesi(fenomenler);
 
@@ -212,12 +212,12 @@ Aşağıdakileri yapmak için fenomenSil'i kullanın:
 ÖRNEK: fenomenSil işlevi fenomenler dizisi ve 0 indeks sayısı ile çağrılırsa, veri kümemizden 'Instagram' kaldırılmış olarak döndürür. */
 function fenomenSil(newList,no) {
 
-  newList= [... fenomenler];
-  delete newList[no].platform;
+ const yeni= [... newList];
+  yeni.splice(no, 1);
   
-  return newList;
+  return yeni;
 }
-console.log(fenomenSil(fenomenler,2));
+console.log(fenomenSil(fenomenler, 2));
 
 
 /* Görev 6:
@@ -237,24 +237,20 @@ Aşağıdakileri yapmak için fenomenEkle'i kullanın:
 
 ÖRNEK: fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram") çağrıldığında dizinin sonuna yukarıdaki nesne en sona eklenerek yeni fenomenler dizisini döndürmelidir. */
 
-function fenomenEkle(fen,numberr,name,follow,post,plat) 
-{
-  
- fen = [... fenomenler];
- fen.push({
-number : numberr,
-profile : name,
-followers : follow,
-posts : post,
-platform : plat,
-
- }
-
- )
- return fen ;
+function fenomenEkle(fen, numberr, name, follow, post, plat) {
+  fen = [...fenomenler];
+  fen.push({
+    number: numberr,
+    profile: name,
+    followers: follow,
+    posts: post,
+    platform: plat,
+  });
+  return fen;
 }
-console.log(fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram"));
-
+console.log(
+  fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram")
+);
 
 /* Görev 7:
 Aşağıdakileri yapmak için enFenomenler'yi kullanın:
@@ -291,10 +287,11 @@ Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
 
 function fenomenGonderimSayisi(getir,no)
 {
-  for (let i=0;i<getir.length;i++){
-   if(getir[i].profile === no ) {
+  const yenidiziolustur = [... getir];
+  for (let i=0;i<yenidiziolustur.length;i++){
+   if(yenidiziolustur[i].profile.includes(no)) {
           
-           return getir[i].post
+           return yenidiziolustur[i].posts;
 
    }
    
@@ -315,20 +312,8 @@ Not: Gönderi sayısı belli olmayan (NA) hesaba katmayın.
 Örnek: platformaGoreCokGonderiYapanFenomen(fenomenler, 'TikTok') çağrıldığında "charli damelio" dönmelidir
 */
 
-function platformaGoreCokGonderiYapanFenomen(encok,hesap){
- // let max = encok[i].post;
-  // for(let i=0;i<encok.length;i++){
-  
-  //if(encok[i].post>max && encok[i].platform === "Tiktok"){
-
-    // max= encok[i].post;
-
-  }
-  
-//}
-      // return max;
-//}
-
+function platformaGoreCokGonderiYapanFenomen(fenomenlerDizisi,platformAdi){
+}
 //console.log(platformaGoreCokGonderiYapanFenomen(fenomenler,"Tiktok"));
 
 /* ***** GÖREVLERİN SONU ***** */

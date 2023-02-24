@@ -174,7 +174,7 @@ NOT: DÖNDÜĞÜNÜZ DİZİN YUKARIDAKİ BİÇİMLE EŞLEŞMESİ GEREKİR, YA DA
 function indekseGoreFenomen(name,numbers) {
 
   const halil = name[numbers];
-  return halil.number-1 + " .indekste bulunan fenomen: " + halil.profile;
+  return `${halil.number-1}. indekste bulunan fenomen: ${halil.profile}`;
 
 
 }
@@ -249,8 +249,9 @@ posts : post,
 platform : plat,
 
  }
+
  )
-  return fen;
+ return fen ;
 }
 console.log(fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram"));
 
@@ -292,6 +293,7 @@ function fenomenGonderimSayisi(getir,no)
 {
   for (let i=0;i<getir.length;i++){
    if(getir[i].profile === no ) {
+          
            return getir[i].post
 
    }

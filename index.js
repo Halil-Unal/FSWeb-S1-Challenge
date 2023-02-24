@@ -190,15 +190,14 @@ Aşağıdakileri yapmak için profilListesi'ni kullanın:
 */
 
 function profilListesi(newArray) {
-  const kopya = [...newArray]
-  for(let i=0; i<newArray.length;i++){
-    console.log(newArray[i].profile);
-     
+  const isimDizisi = [];
+  for (let i = 0; i < newArray.length; i++) {
     
+    isimDizisi.push(newArray[i].profile);
   }
-  return newArray;
+  return isimDizisi;
 }
-profilListesi(fenomenler);
+console.log(profilListesi(fenomenler));
 
 
 /* Görev 5:
@@ -238,15 +237,15 @@ Aşağıdakileri yapmak için fenomenEkle'i kullanın:
 ÖRNEK: fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram") çağrıldığında dizinin sonuna yukarıdaki nesne en sona eklenerek yeni fenomenler dizisini döndürmelidir. */
 
 function fenomenEkle(fen, numberr, name, follow, post, plat) {
-  fen = [...fenomenler];
-  fen.push({
+  const nep = [...fen];
+  nep.push({
     number: numberr,
     profile: name,
     followers: follow,
     posts: post,
     platform: plat,
   });
-  return fen;
+  return nep;
 }
 console.log(
   fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram")

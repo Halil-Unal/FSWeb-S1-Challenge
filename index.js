@@ -329,7 +329,7 @@ function platformaGoreCokGonderiYapanFenomen(fenomenlerDizisi, platformAdi) {
   }
 	let max = newArray[0].posts;
 	let profileWithMaxPosts = newArray[0].profile;
-	for (let i = 0; i < newArray.length; i++) {
+	for (let i = 1; i < newArray.length; i++) {
 		if (newArray[i].posts > max) {
 			max = newArray[i].posts;
 			profileWithMaxPosts = newArray[i].profile;

@@ -199,7 +199,8 @@ function profilListesi(newArray) {
 }
 console.log(profilListesi(fenomenler));
 
-
+/*const son = fenomenler.map(x=> x.profile);
+console.log(son);*/
 /* Görev 5:
 Aşağıdakileri yapmak için fenomenSil'i kullanın:
 1. ilk parametre olarak fenomenler dizisini alın
@@ -274,7 +275,8 @@ return yenidizi;
 
 }
 console.log(enFenomenler(fenomenler));
-
+//const son1 = fenomenler.filter(x=>x.followers>100000000).map(x=> x.profile);
+//console.log(son1);
 /* Görev 8:
 Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
 1. ilk parametre olarak fenomenler dizisini alın
@@ -313,11 +315,18 @@ Not: Gönderi sayısı belli olmayan (NA) hesaba katmayın.
 
 function platformaGoreCokGonderiYapanFenomen(fenomenlerDizisi, platformAdi) {
 	const newArray = [];
-	fenomenlerDizisi.forEach((fenom) => {
+	/*fenomenlerDizisi.forEach((fenom) => {
 		if (fenom.platform === platformAdi) {
 			newArray.push(fenom);
 		}
-	});
+	});*/
+  for (let i=0;i<fenomenlerDizisi.length;i++){
+    const fenom =fenomenlerDizisi[i];
+    if(fenom.platform==platformAdi){
+      newArray.push(fenom);
+    }
+
+  }
 	let max = newArray[0].posts;
 	let profileWithMaxPosts = newArray[0].profile;
 	for (let i = 0; i < newArray.length; i++) {
@@ -333,6 +342,9 @@ console.log(
 	"denemedeme",
 	platformaGoreCokGonderiYapanFenomen(fenomenler, "TikTok")
 );
+
+
+
 /* ***** GÖREVLERİN SONU ***** */
 
 
